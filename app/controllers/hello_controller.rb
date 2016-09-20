@@ -1,14 +1,10 @@
 class HelloController < ApplicationController
   def index
+    token = "<EAAIA76etkE0BAJjEavDj4aqB5WZBiQZAqjwQ5Qb5bBTDBakGimsh4eDi33XiuZCqptciweAOGrKzxP1vthfeq7DxqfrB33xWRb2cG3ZARm0yI1DTWC1grGkfhvzeUB24gWGHMJ7Ts3DPeUdKt30jezO3xsifvKs2gCpVMMYEFwZDZD>"
+    message = params["entry"][0]["messaging"][0]
 
-      token = "<EAAIA76etkE0BAJjEavDj4aqB5WZBiQZAqjwQ5Qb5bBTDBakGimsh4eDi33XiuZCqptciweAOGrKzxP1vthfeq7DxqfrB33xWRb2cG3ZARm0yI1DTWC1grGkfhvzeUB24gWGHMJ7Ts3DPeUdKt30jezO3xsifvKs2gCpVMMYEFwZDZD>"
-
-      message = params["entry"][0]["messaging"][0]
-
-    if message.include?("message")
-
+      if message.include?("message")
         #ユーザーの発言
-
         sender = message["sender"]["id"]
         text = message["message"]["text"]
 
@@ -31,4 +27,3 @@ class HelloController < ApplicationController
     end
   end
 end
-
