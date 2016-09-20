@@ -7,5 +7,5 @@ class HelloController < ApplicationController
    else
     render json: "Error, wrong validation token"
    end
-  end
+ end
 end
